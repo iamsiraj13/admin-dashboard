@@ -7,6 +7,18 @@ import {
   BsFillAwardFill,
   BsFillCloudArrowDownFill,
   BsFileEarmarkBreak,
+  BsFileEarmarkSpreadsheetFill,
+  BsFillLockFill,
+  BsFillPersonLinesFill,
+  BsFillCollectionPlayFill,
+  BsFillExclamationTriangleFill,
+  BsQuestionLg,
+  BsFillTagsFill,
+  BsFillBarChartLineFill,
+  BsFillPinMapFill,
+  BsMusicNoteList,
+  BsFillFileCodeFill,
+  BsFillTelephoneFill,
 } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import {
@@ -55,62 +67,62 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     {
       id: 8,
       title: "tables",
-      icon: <AiFillHome />,
+      icon: <BsFileEarmarkSpreadsheetFill />,
     },
     {
       id: 9,
       title: "authentication",
-      icon: <AiFillHome />,
+      icon: <BsFillLockFill />,
     },
     {
       id: 10,
       title: "user profile",
-      icon: <AiFillHome />,
+      icon: <BsFillPersonLinesFill />,
     },
     {
       id: 11,
       title: "timeline",
-      icon: <AiFillHome />,
+      icon: <BsFillCollectionPlayFill />,
     },
     {
       id: 12,
       title: "errors",
-      icon: <AiFillHome />,
+      icon: <BsFillExclamationTriangleFill />,
     },
     {
       id: 13,
       title: "faq",
-      icon: <AiFillHome />,
+      icon: <BsQuestionLg />,
     },
     {
       id: 14,
       title: "pricing tables",
-      icon: <AiFillHome />,
+      icon: <BsFillTagsFill />,
     },
     {
       id: 15,
       title: "charts",
-      icon: <AiFillHome />,
+      icon: <BsFillBarChartLineFill />,
     },
     {
       id: 15,
       title: "maps",
-      icon: <AiFillHome />,
+      icon: <BsFillPinMapFill />,
     },
     {
       id: 16,
       title: "menu levels",
-      icon: <AiFillHome />,
+      icon: <BsMusicNoteList />,
     },
     {
       id: 17,
       title: "documentation",
-      icon: <AiFillHome />,
+      icon: <BsFillFileCodeFill />,
     },
     {
       id: 18,
       title: "support",
-      icon: <AiFillHome />,
+      icon: <BsFillTelephoneFill />,
     },
   ];
 
@@ -210,7 +222,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             </>
           ))}
           {!isOpen && (
-            <p className="p-2 capitalize text-[14px] text-gray-light">
+            <p className="p-2 capitalize text-[12px] font-normal text-gray-light">
               ui elements
             </p>
           )}
@@ -287,7 +299,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           ))}
 
           {!isOpen && (
-            <p className="p-2 capitalize text-[14px] text-gray-light">
+            <p className="p-2 capitalize text-[12px] font-normal text-gray-light">
               forms & tables
             </p>
           )}
@@ -362,7 +374,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             </>
           ))}
           {!isOpen && (
-            <p className="p-2 capitalize text-[14px] text-gray-light">pages</p>
+            <p className="p-2 capitalize text-[12px] font-normal  text-gray-light">
+              pages
+            </p>
           )}
           {menus.slice(8, 14).map((menu, index) => (
             <>
@@ -436,7 +450,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           ))}
 
           {!isOpen && (
-            <p className="p-2 capitalize text-[14px] text-gray-light">
+            <p className="p-2 capitalize text-[12px] font-normal  text-gray-light">
               charts & maps
             </p>
           )}
@@ -512,7 +526,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           ))}
 
           {!isOpen && (
-            <p className="p-2 capitalize text-[14px] text-gray-light">others</p>
+            <p className="p-2 capitalize text-[12px] font-normal  text-gray-light">
+              others
+            </p>
           )}
           {menus.slice(16, 19).map((menu, index) => (
             <>

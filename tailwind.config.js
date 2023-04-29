@@ -7,7 +7,7 @@ export default {
         blue: "#3461FF",
         "blue-light": "#C1CFFF",
         gray: "#343a40",
-        "gray-light": "#ced4da",
+        "gray-light": "#b0afaf",
       },
     },
     boxShadow: {

@@ -8,17 +8,23 @@ import {
 } from "react-icons/bs";
 const Header = () => {
   return (
-    <div className="pl-4 h-[60px]   w-full flex items-center justify-between pr-4">
-      <form className="w-[30%] flex items-center bg-[#F9FAFB] py-2 px-4 rounded-3xl ">
-        <div className="text-gray pr-4 ">
-          <BsSearch />
-        </div>
-        <input
-          type="text"
-          placeholder="Search"
-          className="w-[30%] focus:outline-none leading-[1.5] text-gray"
-        />
-      </form>
+    <div className="pl-4 h-[60px]  bg-[#F9FAFB] w-full flex items-center justify-between pr-4">
+      <div className="w-[30%]">
+        {" "}
+        <form
+          className="w-full flex items-center bg-white py-2 px-4 border
+         border-gray-light rounded-3xl  focus:ring-1 focus:ring-red-500"
+        >
+          <div className="text-gray pr-4 ">
+            <BsSearch />
+          </div>
+          <input
+            type="text"
+            placeholder="Search"
+            className="w-full focus:outline-none bg-transparent leading-[1.5] text-gray"
+          />
+        </form>
+      </div>
       <div className="flex items-center gap-6">
         <div>
           <BsGrid3X3GapFill />
