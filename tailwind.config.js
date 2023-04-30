@@ -9,9 +9,9 @@ export default {
         gray: "#343a40",
         "gray-light": "#b0afaf",
       },
-    },
-    boxShadow: {
-      my: "0 0.125rem 0.25rem rgb(0 0 0 / 8%)",
+      boxShadow: {
+        my: "0 0.125rem 0.25rem rgb(0 0 0 / 8%)",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar")({ nocompatible: true })],

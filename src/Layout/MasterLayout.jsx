@@ -1,6 +1,7 @@
 import Header from "../components/Header/Header";
 import { useState } from "react";
 import Sidebar from "../components/Sidebar/Sidebar";
+import { Outlet } from "react-router-dom";
 
 const MasterLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,7 @@ const MasterLayout = () => {
       <div className="wrapper">
         {/*================  start top header  ================ */}
         <header
-          className={` transition-all duration-500 shadow-my bg-white  ${
+          className={` transition-all duration-500 shadow-my mb-[60px] bg-white fixed left-0 right-0 top-0  ${
             isOpen ? " ml-[70px]" : "ml-[260px]"
           }`}
         >
@@ -41,8 +42,7 @@ const MasterLayout = () => {
             isOpen ? " ml-[70px]" : "ml-[260px]"
           }`}
         >
-          <h1>Welcome to my website!</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <Outlet />
         </main>
       </div>
       {/*================ end wrapper =============== */}
