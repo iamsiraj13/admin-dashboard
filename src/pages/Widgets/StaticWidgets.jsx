@@ -4,10 +4,10 @@ import {
   ColorWidgetData,
   rightIconsData,
 } from "../../assets/data/widgetData";
-import ColorWidget from "../../components/UI/Widgets/ColorWidget";
-import CurcularCard from "../../components/UI/Widgets/CurcularCard";
-import RightIconOutline from "../../components/UI/Widgets/RightIconOutline";
-import RightIconOutlineTwo from "../../components/UI/Widgets/RightIconOutlineTwo";
+import ColorWidget from "../../components/Widgets/ColorWidget";
+import CurcularCard from "../../components/Widgets/CurcularCard";
+import RightIconOutline from "../../components/Widgets/RightIconOutline";
+import RightIconOutlineTwo from "../../components/Widgets/RightIconOutlineTwo";
 const StaticWidgets = () => {
   return (
     <>

@@ -1,25 +1,5 @@
 import { AiOutlineMenu, AiFillHome } from "react-icons/ai";
 import { FiCircle } from "react-icons/fi";
-import {
-  BsFillGridFill,
-  BsDropletFill,
-  BsFillBasket2Fill,
-  BsFillAwardFill,
-  BsFillCloudArrowDownFill,
-  BsFileEarmarkBreak,
-  BsFileEarmarkSpreadsheetFill,
-  BsFillLockFill,
-  BsFillPersonLinesFill,
-  BsFillCollectionPlayFill,
-  BsFillExclamationTriangleFill,
-  BsQuestionLg,
-  BsFillTagsFill,
-  BsFillBarChartLineFill,
-  BsFillPinMapFill,
-  BsMusicNoteList,
-  BsFillFileCodeFill,
-  BsFillTelephoneFill,
-} from "react-icons/bs";
 import { Link } from "react-router-dom";
 import {
   Accordion,
@@ -27,116 +7,8 @@ import {
   AccordionHeader,
   AccordionItem,
 } from "react-headless-accordion";
+import { menus } from "../../assets/data/Menus";
 const Sidebar = ({ isOpen, toggleSidebar }) => {
-  const menus = [
-    {
-      id: 1,
-      title: "dashboard",
-      icon: <AiFillHome />,
-    },
-    {
-      id: 2,
-      title: "application",
-      icon: <BsFillGridFill />,
-    },
-    {
-      id: 3,
-      title: "widgets",
-      icon: <BsDropletFill />,
-      submenu: true,
-      submenus: [
-        {
-          title: "static widgets",
-          path: "/static-widgets",
-        },
-        {
-          title: "data widgets",
-          path: "/data-widgets",
-        },
-      ],
-    },
-    {
-      id: 4,
-      title: "ecommerce",
-      icon: <BsFillBasket2Fill />,
-    },
-    {
-      id: 5,
-      title: "components",
-      icon: <BsFillAwardFill />,
-    },
-    {
-      id: 6,
-      title: "icons",
-      icon: <BsFillCloudArrowDownFill />,
-    },
-    {
-      id: 7,
-      title: "forms",
-      icon: <BsFileEarmarkBreak />,
-    },
-    {
-      id: 8,
-      title: "tables",
-      icon: <BsFileEarmarkSpreadsheetFill />,
-    },
-    {
-      id: 9,
-      title: "authentication",
-      icon: <BsFillLockFill />,
-    },
-    {
-      id: 10,
-      title: "user profile",
-      icon: <BsFillPersonLinesFill />,
-    },
-    {
-      id: 11,
-      title: "timeline",
-      icon: <BsFillCollectionPlayFill />,
-    },
-    {
-      id: 12,
-      title: "errors",
-      icon: <BsFillExclamationTriangleFill />,
-    },
-    {
-      id: 13,
-      title: "faq",
-      icon: <BsQuestionLg />,
-    },
-    {
-      id: 14,
-      title: "pricing tables",
-      icon: <BsFillTagsFill />,
-    },
-    {
-      id: 15,
-      title: "charts",
-      icon: <BsFillBarChartLineFill />,
-    },
-    {
-      id: 15,
-      title: "maps",
-      icon: <BsFillPinMapFill />,
-    },
-    {
-      id: 16,
-      title: "menu levels",
-      icon: <BsMusicNoteList />,
-    },
-    {
-      id: 17,
-      title: "documentation",
-      icon: <BsFillFileCodeFill />,
-    },
-    {
-      id: 18,
-      title: "support",
-      icon: <BsFillTelephoneFill />,
-    },
-  ];
-
   return (
     <>
       {/* Sidebar */}
@@ -207,24 +79,30 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                           <ul
                             className={`transform transition-all duration-500  `}
                           >
-                            <li>
-                              <Link
-                                className={`py-2 my-1 px-2  rounded-md  text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
-                                  open
-                                    ? "border-l-4 border-l-blue"
-                                    : "border-l-4 border-l-transparent"
-                                }`}
-                              >
-                                <div className="flex items-center gap-2">
-                                  <div className="text-[12px] ml-2">
-                                    <FiCircle />
-                                  </div>
-                                  <div className="capitalize text-[15px]">
-                                    home
-                                  </div>
-                                </div>
-                              </Link>
-                            </li>
+                            {menu.submenu &&
+                              menu.submenus.map((submenuItem, index) => (
+                                <>
+                                  <li key={index}>
+                                    <Link
+                                      to={submenuItem.path}
+                                      className={`py-2 my-1 px-2  rounded-md  text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
+                                        open
+                                          ? "border-l-4 border-l-blue"
+                                          : "border-l-4 border-l-transparent"
+                                      }`}
+                                    >
+                                      <div className="flex items-center gap-2">
+                                        <div className="text-[12px] ml-2">
+                                          <FiCircle />
+                                        </div>
+                                        <div className="capitalize text-[15px]">
+                                          {submenuItem.title}
+                                        </div>
+                                      </div>
+                                    </Link>
+                                  </li>
+                                </>
+                              ))}
                           </ul>
                         </li>
                       </ul>
@@ -307,8 +185,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                                   </li>
                                 </>
                               ))}
-
-                            {/*  */}
                           </ul>
                         </li>
                       </ul>
@@ -367,24 +243,30 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                           <ul
                             className={`transform transition-all duration-500  `}
                           >
-                            <li>
-                              <Link
-                                className={`py-2 my-1 px-2  rounded-md  text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
-                                  open
-                                    ? "border-l-4 border-l-blue"
-                                    : "border-l-4 border-l-transparent"
-                                }`}
-                              >
-                                <div className="flex items-center gap-2">
-                                  <div className="text-[12px] ml-2">
-                                    <FiCircle />
-                                  </div>
-                                  <div className="capitalize text-[15px]">
-                                    home
-                                  </div>
-                                </div>
-                              </Link>
-                            </li>
+                            {menu.submenu &&
+                              menu.submenus.map((submenuItem, index) => (
+                                <>
+                                  <li key={index}>
+                                    <Link
+                                      to={submenuItem.path}
+                                      className={`py-2 my-1 px-2  rounded-md  text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
+                                        open
+                                          ? "border-l-4 border-l-blue"
+                                          : "border-l-4 border-l-transparent"
+                                      }`}
+                                    >
+                                      <div className="flex items-center gap-2">
+                                        <div className="text-[12px] ml-2">
+                                          <FiCircle />
+                                        </div>
+                                        <div className="capitalize text-[15px]">
+                                          {submenuItem.title}
+                                        </div>
+                                      </div>
+                                    </Link>
+                                  </li>
+                                </>
+                              ))}
                           </ul>
                         </li>
                       </ul>
@@ -442,24 +324,30 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                           <ul
                             className={`transform transition-all duration-500  `}
                           >
-                            <li>
-                              <Link
-                                className={`py-2 my-1 px-2  rounded-md  text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
-                                  open
-                                    ? "border-l-4 border-l-blue"
-                                    : "border-l-4 border-l-transparent"
-                                }`}
-                              >
-                                <div className="flex items-center gap-2">
-                                  <div className="text-[12px] ml-2">
-                                    <FiCircle />
-                                  </div>
-                                  <div className="capitalize text-[15px]">
-                                    home
-                                  </div>
-                                </div>
-                              </Link>
-                            </li>
+                            {menu.submenu &&
+                              menu.submenus.map((submenuItem, index) => (
+                                <>
+                                  <li key={index}>
+                                    <Link
+                                      to={submenuItem.path}
+                                      className={`py-2 my-1 px-2  rounded-md  text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
+                                        open
+                                          ? "border-l-4 border-l-blue"
+                                          : "border-l-4 border-l-transparent"
+                                      }`}
+                                    >
+                                      <div className="flex items-center gap-2">
+                                        <div className="text-[12px] ml-2">
+                                          <FiCircle />
+                                        </div>
+                                        <div className="capitalize text-[15px]">
+                                          {submenuItem.title}
+                                        </div>
+                                      </div>
+                                    </Link>
+                                  </li>
+                                </>
+                              ))}
                           </ul>
                         </li>
                       </ul>
@@ -518,24 +406,30 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                           <ul
                             className={`transform transition-all duration-500  `}
                           >
-                            <li>
-                              <Link
-                                className={`py-2 my-1 px-2  rounded-md  text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
-                                  open
-                                    ? "border-l-4 border-l-blue"
-                                    : "border-l-4 border-l-transparent"
-                                }`}
-                              >
-                                <div className="flex items-center gap-2">
-                                  <div className="text-[12px] ml-2">
-                                    <FiCircle />
-                                  </div>
-                                  <div className="capitalize text-[15px]">
-                                    home
-                                  </div>
-                                </div>
-                              </Link>
-                            </li>
+                            {menu.submenu &&
+                              menu.submenus.map((submenuItem, index) => (
+                                <>
+                                  <li key={index}>
+                                    <Link
+                                      to={submenuItem.path}
+                                      className={`py-2 my-1 px-2  rounded-md  text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
+                                        open
+                                          ? "border-l-4 border-l-blue"
+                                          : "border-l-4 border-l-transparent"
+                                      }`}
+                                    >
+                                      <div className="flex items-center gap-2">
+                                        <div className="text-[12px] ml-2">
+                                          <FiCircle />
+                                        </div>
+                                        <div className="capitalize text-[15px]">
+                                          {submenuItem.title}
+                                        </div>
+                                      </div>
+                                    </Link>
+                                  </li>
+                                </>
+                              ))}
                           </ul>
                         </li>
                       </ul>
@@ -594,24 +488,30 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                           <ul
                             className={`transform transition-all duration-500  `}
                           >
-                            <li>
-                              <Link
-                                className={`py-2 my-1 px-2  rounded-md  text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
-                                  open
-                                    ? "border-l-4 border-l-blue"
-                                    : "border-l-4 border-l-transparent"
-                                }`}
-                              >
-                                <div className="flex items-center gap-2">
-                                  <div className="text-[12px] ml-2">
-                                    <FiCircle />
-                                  </div>
-                                  <div className="capitalize text-[15px]">
-                                    home
-                                  </div>
-                                </div>
-                              </Link>
-                            </li>
+                            {menu.submenu &&
+                              menu.submenus.map((submenuItem, index) => (
+                                <>
+                                  <li key={index}>
+                                    <Link
+                                      to={submenuItem.path}
+                                      className={`py-2 my-1 px-2  rounded-md  text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
+                                        open
+                                          ? "border-l-4 border-l-blue"
+                                          : "border-l-4 border-l-transparent"
+                                      }`}
+                                    >
+                                      <div className="flex items-center gap-2">
+                                        <div className="text-[12px] ml-2">
+                                          <FiCircle />
+                                        </div>
+                                        <div className="capitalize text-[15px]">
+                                          {submenuItem.title}
+                                        </div>
+                                      </div>
+                                    </Link>
+                                  </li>
+                                </>
+                              ))}
                           </ul>
                         </li>
                       </ul>
