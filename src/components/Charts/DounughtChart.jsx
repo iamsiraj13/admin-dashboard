@@ -1,28 +1,61 @@
-import React from "react";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import React, { useState } from "react";
 
-import { Doughnut } from "react-chartjs-2";
-
-ChartJS.register(ArcElement, Tooltip, Legend);
-
-export const data = {
-  labels: ["Screen 1", "Screen 2", "Screen 3", "Screen 4", "Screen 5"],
-  datasets: [
-    {
-      data: [25.6, 32.0, 23.8, 9.9, 8.7],
-      backgroundColor: ["#0D6EFD", "#212529", "#17A00E", "#F41127", "#FFC107"],
-      borderColor: ["#fff"],
-      borderWidth: 1,
-      cutout: "60%",
-    },
-  ],
-};
+import ReactApexChart from "react-apexcharts";
+// #3461FF
 const DounughtChart = () => {
+  const [state, setState] = useState({
+    series: [44, 55, 30],
+    options: {
+      colors: ["#3461FF", "#8ea8fd", "#c1cfff"],
+      chart: {
+        width: 10,
+        type: "donut",
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      plotOptions: {
+        pie: {
+          donut: {
+            size: "80",
+            labels: {
+              show: true,
+              total: {
+                fontSize: 30,
+                showAlways: true,
+                show: true,
+              },
+            },
+          },
+        },
+      },
+
+      responsive: [
+        {
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200,
+            },
+            legend: {
+              show: false,
+            },
+          },
+        },
+      ],
+      legend: {
+        show: false,
+      },
+    },
+  });
   return (
     <>
-      <div>
-        <Doughnut data={data} className="flex" />
-      </div>
+      <ReactApexChart
+        options={state.options}
+        series={state.series}
+        type="donut"
+        width={380}
+      />
     </>
   );
 };

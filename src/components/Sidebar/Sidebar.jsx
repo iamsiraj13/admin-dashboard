@@ -41,72 +41,96 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               <AccordionItem className="w-full" key={index}>
                 {({ open }) => (
                   <>
-                    <AccordionHeader
-                      className={`w-full py-3 px-2 hover:shadow-my border-l-4 border-transparent hover:border-l-4 hover:border-l-blue  rounded-md   text-grey hover:text-blue flex items-center justify-between  cursor-pointer hover:bg-white ${
-                        open ? "border-l-4 border-l-blue text-blue" : ""
-                      }`}
-                    >
-                      <div className="flex items-center gap-2">
-                        <div className="text-[20px] ml-2">{menu.icon}</div>
-                        {!isOpen && (
-                          <div className="capitalize text-[15px]">
-                            {menu.title}
-                          </div>
-                        )}
-                      </div>
-
-                      {!isOpen && (
-                        <svg
-                          className={`w-4 h-4 transition-all duration-300 ${
-                            !open ? "" : "rotate-90"
+                    {menu.submenu === true ? (
+                      <>
+                        <AccordionHeader
+                          className={`w-full py-3 px-2 hover:shadow-my border-l-4 border-transparent hover:border-l-4 hover:border-l-blue  rounded-md   text-grey hover:text-blue flex items-center justify-between  cursor-pointer hover:bg-white ${
+                            open ? "border-l-4 border-l-blue text-blue" : ""
                           }`}
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <path
-                            fillRule="evenodd"
-                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      )}
-                    </AccordionHeader>
+                          <div className="flex items-center gap-2">
+                            <div className="text-[20px] ml-2">{menu.icon}</div>
+                            {!isOpen && (
+                              <div className="capitalize text-[15px]">
+                                {menu.title}
+                              </div>
+                            )}
+                          </div>
 
-                    <AccordionBody>
-                      <ul>
-                        <li className="mb-4 text-grey transform transition-all duration-500 ">
-                          <ul
-                            className={`transform transition-all duration-500  `}
-                          >
-                            {menu.submenu &&
-                              menu.submenus.map((submenuItem, index) => (
-                                <>
-                                  <li key={index}>
-                                    <Link
-                                      to={submenuItem.path}
-                                      className={`py-2 my-1 px-2  rounded-md  text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
-                                        open
-                                          ? "border-l-4 border-l-blue"
-                                          : "border-l-4 border-l-transparent"
-                                      }`}
-                                    >
-                                      <div className="flex items-center gap-2">
-                                        <div className="text-[12px] ml-2">
-                                          <FiCircle />
+                          {!isOpen && menu.submenu && (
+                            <svg
+                              className={`w-4 h-4 transition-all duration-300 ${
+                                !open ? "" : "rotate-90"
+                              }`}
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          )}
+                        </AccordionHeader>
+                      </>
+                    ) : (
+                      <>
+                        <Link
+                          to="/"
+                          className={`w-full py-3 px-2 hover:shadow-my border-l-4 border-transparent hover:border-l-4 hover:border-l-blue  rounded-md   text-grey hover:text-blue flex items-center justify-between  cursor-pointer hover:bg-white ${
+                            open ? "border-l-4 border-l-blue text-blue" : ""
+                          }`}
+                        >
+                          <div className="flex items-center gap-2">
+                            <div className="text-[20px] ml-2">{menu.icon}</div>
+                            {!isOpen && (
+                              <div className="capitalize text-[15px]">
+                                {menu.title}
+                              </div>
+                            )}
+                          </div>
+                        </Link>
+                      </>
+                    )}
+
+                    {menu.submenu && (
+                      <AccordionBody>
+                        <ul>
+                          <li className="mb-4 text-grey transform transition-all duration-500 ">
+                            <ul
+                              className={`transform transition-all duration-500  `}
+                            >
+                              {menu.submenu &&
+                                menu.submenus.map((submenuItem, index) => (
+                                  <>
+                                    <li key={index}>
+                                      <Link
+                                        to={submenuItem.path}
+                                        className={`py-2 my-1 px-2  rounded-md  text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
+                                          open
+                                            ? "border-l-4 border-l-blue"
+                                            : "border-l-4 border-l-transparent"
+                                        }`}
+                                      >
+                                        <div className="flex items-center gap-2">
+                                          <div className="text-[12px] ml-2">
+                                            <FiCircle />
+                                          </div>
+                                          <div className="capitalize text-[15px]">
+                                            {submenuItem.title}
+                                          </div>
                                         </div>
-                                        <div className="capitalize text-[15px]">
-                                          {submenuItem.title}
-                                        </div>
-                                      </div>
-                                    </Link>
-                                  </li>
-                                </>
-                              ))}
-                          </ul>
-                        </li>
-                      </ul>
-                    </AccordionBody>
+                                      </Link>
+                                    </li>
+                                  </>
+                                ))}
+                            </ul>
+                          </li>
+                        </ul>
+                      </AccordionBody>
+                    )}
                   </>
                 )}
               </AccordionItem>

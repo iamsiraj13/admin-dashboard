@@ -15,7 +15,7 @@ const MasterLayout = () => {
       <div className="wrapper">
         {/*================  start top header  ================ */}
         <header
-          className={` transition-all duration-500 shadow-my mb-[60px] bg-white fixed left-0 right-0 top-0  ${
+          className={` transition-all duration-500 shadow-my mb-[60px] z-50 bg-white fixed left-0 right-0 top-0  ${
             isOpen ? " ml-[70px]" : "ml-[260px]"
           }`}
         >
@@ -26,7 +26,7 @@ const MasterLayout = () => {
         {/*================  start sidebar ================ */}
 
         <aside
-          className={`shadow-my sidebar-wrapper fixed top-0  bg-[#F7F8FA] left-0 h-screen shadow transform transition-all duration-500 overflow-y-scroll  scrollbar-thin  scrollbar-thumb-gray-light scrollbar-track-gray-100 ${
+          className={`shadow-my sidebar-wrapper fixed top-0  bg-[#F7F8FA] left-0 h-screen transform transition-all duration-500 overflow-y-scroll  scrollbar-thin  scrollbar-thumb-gray-light scrollbar-track-gray-100 ${
             isOpen ? " w-[70px]" : " w-[260px]"
           } `}
         >

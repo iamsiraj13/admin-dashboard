@@ -7,7 +7,10 @@ import LineChartSM from "../../components/Charts/LineChartSM";
 const DataWidgets = () => {
   return (
     <PageLayout>
-      <div className="w-[30%]">
+      <div className="w-[40%] relative">
+        {/* <p className="absolute left-[40%] top-[50%] translate-x-[-50%] translate-y-[-50%] text-[70px] font-bold">
+          40%
+        </p> */}
         <DounughtChart />
       </div>
 

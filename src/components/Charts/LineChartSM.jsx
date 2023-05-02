@@ -5,9 +5,12 @@ const LineChartSM = () => {
   const [state, setState] = useState({
     series: [
       {
-        data: [10, 20, 15, 16, 10],
+        data: [10, 25, 15, 16, 10],
       },
     ],
+    legend: {
+      show: false,
+    },
     options: {
       chart: {
         type: "line",
@@ -115,7 +118,7 @@ const LineChartSM = () => {
         options={state.options}
         series={state.series}
         type="line"
-        height={100}
+        height={90}
         width={150}
       />
     </>
