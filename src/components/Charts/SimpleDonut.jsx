@@ -2,17 +2,19 @@ import React, { useState } from "react";
 
 import ReactApexChart from "react-apexcharts";
 // #3461FF
-const DounughtChart = () => {
+const SimpleDonut = () => {
   const [state, setState] = useState({
-    series: [44, 55, 30],
+    series: [80, 20],
     options: {
-      colors: ["#8ea8fd", "#3461FF", "#c1cfff"],
+      colors: ["#3461FF", "#ebf0ff"],
       chart: {
-        width: 20,
         type: "donut",
       },
       dataLabels: {
         enabled: false,
+      },
+      stroke: {
+        show: false,
       },
       states: {
         hover: {
@@ -22,22 +24,35 @@ const DounughtChart = () => {
           },
         },
       },
+      responsive: [
+        {
+          breakpoint: 600,
+          options: {
+            chart: {
+              width: 400,
+            },
+            legend: {
+              show: false,
+            },
+          },
+        },
+      ],
       plotOptions: {
         pie: {
           expandOnClick: false,
           donut: {
             stroke: {
-              width: 4,
-              colors: ["#1E252A"],
+              width: 5,
+              //   colors: ["#1E252A"],
             },
 
-            size: ["85", "30", "60"],
+            size: ["85"],
             labels: {
               show: true,
               total: {
                 show: true,
                 label: "85%",
-                formatter: () => "Total Visitors",
+                formatter: () => "Total Traffic",
                 fontSize: "28px",
                 fontWeight: "bold",
                 color: "#000",
@@ -49,10 +64,10 @@ const DounughtChart = () => {
 
       responsive: [
         {
-          breakpoint: 600,
+          breakpoint: 480,
           options: {
             chart: {
-              width: 300,
+              width: 200,
             },
             legend: {
               show: false,
@@ -67,15 +82,14 @@ const DounughtChart = () => {
   });
   return (
     <>
-      <div>
-        <ReactApexChart
-          options={state.options}
-          series={state.series}
-          type="donut"
-        />
-      </div>
+      <ReactApexChart
+        options={state.options}
+        series={state.series}
+        type="donut"
+        width={380}
+      />
     </>
   );
 };
 
-export default DounughtChart;
+export default SimpleDonut;

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 
-const BgColorLineChart = () => {
+const BgLineChartSmall = () => {
   const [state, setState] = useState({
     series: [
       {
         name: "series1",
-        data: [300, 470, 170, 700, 42, 170, 460, 260, 30],
+        data: [0, 470, 170, 600, 802, 170, 860, 260, 30],
       },
     ],
     options: {
@@ -15,6 +15,23 @@ const BgColorLineChart = () => {
         type: "area",
         toolbar: false,
       },
+      grid: {
+        show: false,
+        borderColor: "#90A4AE",
+        strokeDashArray: 0,
+        position: "back",
+        xaxis: {
+          lines: {
+            show: false,
+          },
+        },
+        yaxis: {
+          lines: {
+            show: false,
+          },
+        },
+      },
+
       dataLabels: {
         enabled: false,
       },
@@ -27,25 +44,26 @@ const BgColorLineChart = () => {
         gradient: {
           shadeIntensity: 1,
           inverseColors: false,
+          gradientToColors: undefined,
           opacityFrom: 0.7,
           opacityTo: 0.6,
           stops: [20, 100, 100, 100],
         },
       },
+      yaxis: {
+        labels: {
+          show: false,
+        },
+      },
       xaxis: {
         // type: "datetime",
-        categories: [
-          "jan",
-          "feb",
-          "mar",
-          "apr",
-          "may",
-          "jun",
-          "jul",
-          "aug",
-          "sep",
-        ],
+        categories: [],
+        show: false,
+        labels: {
+          show: false,
+        },
       },
+
       tooltip: {
         x: {
           format: "dd/MM/yy HH:mm",
@@ -55,19 +73,15 @@ const BgColorLineChart = () => {
   });
 
   return (
-    <div>
-      <div className="flex justify-between items-center px-4">
-        <p className="capitalize ">revenue</p>
-        <p className="text-[30px]">...</p>
-      </div>
+    <div className="">
       <ReactApexChart
         options={state.options}
         series={state.series}
         type="area"
-        height={350}
+        height={90}
       />
     </div>
   );
 };
 
-export default BgColorLineChart;
+export default BgLineChartSmall;
