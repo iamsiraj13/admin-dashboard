@@ -8,6 +8,12 @@ export default {
         "blue-light": "#C1CFFF",
         gray: "#343a40",
         "gray-light": "#b0afaf",
+        green: "#12bf24",
+        pink: "#e72e7a",
+        orange: "#ff6632",
+        info: "#32bfff",
+        beguni: "#8932ff",
+        red: "#e72e2e",
       },
       boxShadow: {
         my: "0 0.125rem 0.25rem rgb(0 0 0 / 8%)",

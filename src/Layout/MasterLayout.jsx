@@ -27,10 +27,11 @@ const MasterLayout = () => {
 
         {/*================  start sidebar ================ */}
 
+        {/* desktop sidebar  */}
         <aside
           onBlur={() => setShow(false)}
           className={`z-[999] hidden lg:block
-              shadow-my sidebar-wrapper fixed top-0  bg-[#F7F8FA] left-0 min-h-screen h-full transform transition-all duration-500 overflow-y-scroll  scrollbar-thin  scrollbar-thumb-gray-light scrollbar-track-gray-100 ${
+              shadow-my sidebar-wrapper fixed top-0 bg-[#F7F8FA] left-0 min-h-screen h-full transform transition-all duration-500 overflow-y-scroll  scrollbar-thin  scrollbar-thumb-gray-light scrollbar-track-gray-100 ${
                 isOpen ? " md:w-[70px]  " : " md:w-[260px]"
               } `}
         >
@@ -40,6 +41,7 @@ const MasterLayout = () => {
             setIsOpen={setIsOpen}
           />
         </aside>
+        {/* mobile sidebar  */}
         <aside
           className={`z-[999]   lg:hidden   ${
             show === true ? "translate-x-0" : " translate-x-[-100%]"

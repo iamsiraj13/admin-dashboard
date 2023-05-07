@@ -46,7 +46,10 @@ const Header = ({ setShow }) => {
         <div className="relative cursor-pointer">
           <BsGrid3X3GapFill onClick={gridToggle} />
           {grid && (
-            <div className="absolute w-[360px] bg-white top-full right-0 shadow-[0_0.5rem_1rem_rgba(0,0,0,.15)] px-4 py-4 rounded-lg">
+            <div
+              className="animate__animated   animate__fadeIn  w-screen absolute sm:w-[360px] bg-white top-[38px] right-0 left-[-145px] sm:left-auto shadow-[0_0.5rem_1rem_rgba(0,0,0,.15)] px-4 py-4 rounded-lg"
+              onBlur={() => setGrid(false)}
+            >
               <div className="grid grid-cols-3 gap-2">
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(() => (
                   <>

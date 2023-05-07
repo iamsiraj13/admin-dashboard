@@ -35,6 +35,8 @@ import TodoListPage from "../pages/ApplicationPage/TodoListPage";
 import InvoicePage from "../pages/ApplicationPage/InvoicePage";
 import CalernderPage from "../pages/ApplicationPage/CalernderPage";
 import DashboardPage from "../pages/DashboardPage";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 
 const router = createBrowserRouter([
   {
@@ -184,6 +186,14 @@ const router = createBrowserRouter([
         element: <AvatarAndChips />,
       },
     ],
+  },
+  {
+    path: "/sign-in",
+    element: <Login />,
+  },
+  {
+    path: "/sign-up",
+    element: <Register />,
   },
 ]);
 
