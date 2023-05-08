@@ -19,32 +19,32 @@ const Header = ({ setShow }) => {
   };
 
   return (
-    <div className="pl-4 h-[60px]  bg-[#F9FAFB] w-full flex items-center   justify-between pr-4">
+    <div className="pl-4 h-[50px]  bg-[#F9FAFB] w-full flex items-center border-b border-main  justify-between pr-4">
       <div className="lg:hidden" onClick={() => setShow(true)}>
         <AiOutlineMenu />
       </div>
       <div className="w-[30%] hidden md:block">
         {" "}
         <form
-          className="w-full flex items-center bg-white py-2 px-4 border
-         border-gray-light rounded-3xl  focus:ring-1 focus:ring-red-500"
+          className="w-full flex items-center bg-white py-1 px-2 border
+         border-main rounded-3xl  focus:ring-1 focus:ring-red-500"
         >
-          <div className="text-gray pr-4 ">
+          <div className="text-main pr-2 text-[12px]">
             <BsSearch />
           </div>
           <input
             type="text"
-            placeholder="Search"
-            className="w-full focus:outline-none bg-transparent leading-[1.5] text-gray"
+            placeholder="Type here to search"
+            className="w-full focus:outline-none text-[12px] bg-transparent leading-[1.5] text-gray"
           />
         </form>
       </div>
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-4">
         <div className="sm:hidden">
           <BsSearch />
         </div>
         <div className="relative cursor-pointer">
-          <BsGrid3X3GapFill onClick={gridToggle} />
+          <BsGrid3X3GapFill onClick={gridToggle} className="text-[12px]" />
           {grid && (
             <div
               className="animate__animated   animate__fadeIn  w-screen absolute sm:w-[360px] bg-white top-[38px] right-0 left-[-145px] sm:left-auto shadow-[0_0.5rem_1rem_rgba(0,0,0,.15)] px-4 py-4 rounded-lg"
@@ -66,14 +66,14 @@ const Header = ({ setShow }) => {
           )}
         </div>
         <div className="relative">
-          <BsFillChatRightFill />
-          <span className="absolute -top-[10px] -right-[8px] font-semibold bg-[#F50D0D] text-white text-[12px] w-[15px] h-[15px] flex  items-center justify-center rounded-full">
+          <BsFillChatRightFill className="text-[12px]" />
+          <span className="absolute -top-[10px] -right-[7px] font-semibold bg-[#F50D0D] text-white text-[9px] w-[12px] h-[12px] flex  items-center justify-center rounded-full">
             2
           </span>
         </div>
-        <div className="relative">
-          <BsFillBellFill />
-          <span className="absolute -top-[10px] -right-[8px] font-semibold bg-[#F50D0D] text-white text-[12px] w-[15px] h-[15px] flex  items-center justify-center rounded-full">
+        <div className="relative mr-3">
+          <BsFillBellFill className="text-[12px]" />
+          <span className="absolute -top-[10px] -right-[7px] font-semibold bg-[#F50D0D] text-white text-[9px] w-[12px] h-[12px] flex  items-center justify-center rounded-full">
             2
           </span>
         </div>
@@ -81,15 +81,15 @@ const Header = ({ setShow }) => {
         {/* user profile  */}
         <div>
           <Link href="#">
-            <div className="border-l border-l-gray-light flex gap-4 px-[10px]">
+            <div className="border-l border-l-main flex items-center gap-3 px-[10px]">
               <img
                 src={avater}
                 alt=""
-                className="w-[42px] h-[42px] rounded-full"
+                className="w-[35px] h-[35px] rounded-full"
               />
-              <div className="hidden md:block">
-                <p className="capitalize">jhon doe</p>
-                <small>hr manager</small>
+              <div className="hidden md:block lg:flex lg:flex-col lg:justify-center lg:gap-2">
+                <p className="capitalize text-[14px] mt-1 mb-0">jhon doe</p>
+                <small className="text-[10px] mt-[-10px]">hr manager</small>
               </div>
             </div>
           </Link>

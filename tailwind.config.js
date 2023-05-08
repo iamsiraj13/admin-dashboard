@@ -14,6 +14,9 @@ export default {
         info: "#32bfff",
         beguni: "#8932ff",
         red: "#e72e2e",
+        main: "#C9CBCC",
+        hard: "#4C5258",
+        soft: "#4C5258",
       },
       boxShadow: {
         my: "0 0.125rem 0.25rem rgb(0 0 0 / 8%)",

@@ -53,10 +53,10 @@ const StaticWidgets = () => {
             <h2 className="uppercase font-[600] text-[#5c6269] text-[16px] border-b pb-3 border-b-gray-light">
               color icon widgets
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 gap-[30px] py-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4  lg:grid-cols-4 gap-[30px] py-6">
               <RightIconFill />
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 gap-[30px] py-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4  lg:grid-cols-4 gap-[30px] py-6">
               <RightIconFillTwo />
             </div>
           </div>

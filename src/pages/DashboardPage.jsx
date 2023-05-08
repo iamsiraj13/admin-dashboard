@@ -21,15 +21,15 @@ const DashboardPage = () => {
   return (
     <div className="p-4 pt-[60px] w-full bg-[#f7f8fa]">
       <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-4 ">
-        <div className="shadow-lg px-4 rounded-md bg-white w-full">
+        <div className="shadow-my px-4 rounded-md bg-white w-full">
           <div className="flex justify-between pt-2">
-            <p className="font-normal text-[14px] capitalize text-gray-light">
-              total cost
+            <p className="font-normal text-[12px] capitalize text-soft tracking-wider">
+              total order
             </p>
-            <p>16.55%</p>
+            <p className="text-green  text-[12px]">16.55%</p>
           </div>
-          <div className="flex items-center justify-between">
-            <h3 className="capitalize font-[500] text-[24px] text-gray">
+          <div className="flex items-center justify-between mt-[-20px]">
+            <h3 className="capitalize font-[500] text-[18px] text-gray">
               5,540
             </h3>
             <div className="h-[100px]">
@@ -37,15 +37,16 @@ const DashboardPage = () => {
             </div>
           </div>
         </div>
-        <div className="shadow-lg px-4 rounded-md bg-white">
+
+        <div className="shadow-my px-4 rounded-md bg-white">
           <div className="flex justify-between pt-2">
-            <p className="font-normal text-[14px] capitalize text-gray-light">
-              total cost
+            <p className="font-normal text-[12px] capitalize text-soft tracking-wider">
+              total views
             </p>
-            <p>16.55%</p>
+            <p className="text-[12px]">16.55%</p>
           </div>
-          <div className="flex items-center justify-between">
-            <h3 className="capitalize font-[500] text-[24px] text-gray">
+          <div className="flex items-center justify-between mt-[-20px]">
+            <h3 className="capitalize font-[500] text-[18px] text-hard ">
               5,540
             </h3>
             <div className="h-[100px] w-[100px]">
@@ -53,15 +54,16 @@ const DashboardPage = () => {
             </div>
           </div>
         </div>
-        <div className="shadow-lg px-4 rounded-md bg-white">
+
+        <div className="shadow-my px-4 rounded-md bg-white">
           <div className="flex justify-between pt-2">
-            <p className="font-normal text-[14px] capitalize text-gray-light">
-              total cost
+            <p className="font-normal text-[12px] tracking-wider capitalize text-soft">
+              revenue
             </p>
-            <p>16.55%</p>
+            <p className="text-[12px] text-soft">16.55%</p>
           </div>
-          <div className="flex items-center justify-between">
-            <h3 className="capitalize font-[500] text-[24px] text-gray">
+          <div className="flex items-center justify-between mt-[-20px]">
+            <h3 className="capitalize font-[500] text-[18px] text-hard">
               5,540
             </h3>
             <div className="h-[100px]">
@@ -69,15 +71,16 @@ const DashboardPage = () => {
             </div>
           </div>
         </div>
-        <div className="shadow-lg px-4 rounded-md bg-white">
+
+        <div className="shadow-my px-4 rounded-md bg-white">
           <div className="flex justify-between pt-2">
-            <p className="font-normal text-[14px] capitalize text-gray-light">
-              total cost
+            <p className="font-normal text-[12px] capitalize text-soft">
+              customers
             </p>
-            <p>16.55%</p>
+            <p className="text-[12px] text-soft"> 16.55%</p>
           </div>
-          <div className="flex items-center justify-between">
-            <h3 className="capitalize font-[500] text-[24px] text-gray">
+          <div className="flex items-center justify-between mt-[-20px]">
+            <h3 className="capitalize font-[500] text-[18px] text-hard">
               5,540
             </h3>
             <div className="h-[100px] w-[100px]">

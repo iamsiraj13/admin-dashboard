@@ -14,19 +14,21 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       {/* Sidebar */}
       <div className="relative">
         {/*---------- sidebar header start ---------- */}
-        <div className="border-b left-0 right-0 top-0 fixed h-[60px]  ">
+        <div className="border-b border-[#E6E7E8] left-0 right-0 top-0 fixed h-[50px]  ">
           <div className=" sidebar-header flex justify-between p-3 items-center">
             <div>
               {!isOpen && (
-                <h2 className="text-grey text-xl uppercase font-bold ">logo</h2>
+                <h2 className="text-grey text-md uppercase font-bold text-blue">
+                  logo
+                </h2>
               )}
             </div>
             <div>
               <span
-                className="text-grey font-bold cursor-pointer"
+                className="text-grey font-bold cursor-pointer text-blue"
                 onClick={toggleSidebar}
               >
-                <AiOutlineMenu size={24} />
+                <AiOutlineMenu size={20} />
               </span>
             </div>
           </div>
@@ -49,9 +51,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                           }`}
                         >
                           <div className="flex items-center gap-2">
-                            <div className="text-[20px] ml-2">{menu.icon}</div>
+                            <div className="text-[12px] ml-2">{menu.icon}</div>
                             {!isOpen && (
-                              <div className="capitalize text-[15px]">
+                              <div className="capitalize text-[12px]">
                                 {menu.title}
                               </div>
                             )}
@@ -84,9 +86,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                           }`}
                         >
                           <div className="flex items-center gap-2">
-                            <div className="text-[20px] ml-2">{menu.icon}</div>
+                            <div className="text-[12px] ml-2">{menu.icon}</div>
                             {!isOpen && (
-                              <div className="capitalize text-[15px]">
+                              <div className="capitalize text-[12px]">
                                 {menu.title}
                               </div>
                             )}
@@ -108,7 +110,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                                     <li key={index}>
                                       <Link
                                         to={submenuItem.path}
-                                        className={`py-2 my-1 px-2  rounded-md  text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
+                                        className={`py-2 my-1 px-2  rounded-md  text-grey-light hover:text-blue flex items-center justify-between  cursor-pointer ${
                                           open
                                             ? "border-l-4 border-l-blue"
                                             : "border-l-4 border-l-transparent"
@@ -118,7 +120,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                                           <div className="text-[12px] ml-2">
                                             <FiCircle />
                                           </div>
-                                          <div className="capitalize text-[15px]">
+                                          <div className="capitalize text-[12px]">
                                             {submenuItem.title}
                                           </div>
                                         </div>
@@ -137,7 +139,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             </>
           ))}
           {!isOpen && (
-            <p className="p-2 capitalize text-[12px] font-normal text-gray-light">
+            <p className="p-2 capitalize text-[10px] font-normal text-gray-light">
               ui elements
             </p>
           )}
@@ -148,14 +150,14 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 {({ open }) => (
                   <>
                     <AccordionHeader
-                      className={`w-full py-3 px-2 hover:shadow-my hover:border-l-4 hover:-border-l-blue  rounded-md   text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
+                      className={`w-full py-2 px-2 hover:shadow-my  hover:border-l-4 hover:-border-l-blue  rounded-md   text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
                         open ? "border-l-4 border-l-blue text-blue" : ""
                       }`}
                     >
                       <div className="flex items-center gap-2">
-                        <div className="text-[20px] ml-2">{menu.icon}</div>
+                        <div className="text-[12px] ml-2">{menu.icon}</div>
                         {!isOpen && (
-                          <div className="capitalize text-[15px]">
+                          <div className="capitalize text-[12px]">
                             {menu.title}
                           </div>
                         )}
@@ -198,10 +200,10 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                                       }`}
                                     >
                                       <div className="flex items-center gap-2">
-                                        <div className="text-[12px] ml-2">
+                                        <div className="text-[10px] ml-2">
                                           <FiCircle />
                                         </div>
-                                        <div className="capitalize text-[15px]">
+                                        <div className="capitalize text-[12px]">
                                           {submenuItem.title}
                                         </div>
                                       </div>
@@ -220,7 +222,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           ))}
 
           {!isOpen && (
-            <p className="p-2 capitalize text-[12px] font-normal text-gray-light">
+            <p className="p-2 capitalize text-[10px] font-normal text-gray-light">
               forms & tables
             </p>
           )}
@@ -230,14 +232,14 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 {({ open }) => (
                   <>
                     <AccordionHeader
-                      className={`w-full py-3 px-2 hover:shadow-my hover:border-l-4 hover:-border-l-blue  rounded-md   text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
+                      className={`w-full py-2 px-2 hover:shadow-my hover:border-l-4 hover:-border-l-blue  rounded-md   text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
                         open ? "border-l-4 border-l-blue text-blue" : ""
                       }`}
                     >
                       <div className="flex items-center gap-2">
-                        <div className="text-[20px] ml-2">{menu.icon}</div>
+                        <div className="text-[12px] ml-2">{menu.icon}</div>
                         {!isOpen && (
-                          <div className="capitalize text-[15px]">
+                          <div className="capitalize text-[12px]">
                             {menu.title}
                           </div>
                         )}
@@ -283,7 +285,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                                         <div className="text-[12px] ml-2">
                                           <FiCircle />
                                         </div>
-                                        <div className="capitalize text-[15px]">
+                                        <div className="capitalize text-[12px]">
                                           {submenuItem.title}
                                         </div>
                                       </div>
@@ -311,14 +313,14 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 {({ open }) => (
                   <>
                     <AccordionHeader
-                      className={`w-full py-3 px-2 hover:shadow-my hover:border-l-4 hover:-border-l-blue  rounded-md   text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
+                      className={`w-full py-2 px-2 hover:shadow-my hover:border-l-4 hover:-border-l-blue  rounded-md   text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
                         open ? "border-l-4 border-l-blue text-blue" : ""
                       }`}
                     >
                       <div className="flex items-center gap-2">
-                        <div className="text-[20px] ml-2">{menu.icon}</div>
+                        <div className="text-[12px] ml-2">{menu.icon}</div>
                         {!isOpen && (
-                          <div className="capitalize text-[15px]">
+                          <div className="capitalize text-[12px]">
                             {menu.title}
                           </div>
                         )}
@@ -364,7 +366,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                                         <div className="text-[12px] ml-2">
                                           <FiCircle />
                                         </div>
-                                        <div className="capitalize text-[15px]">
+                                        <div className="capitalize text-[12px]">
                                           {submenuItem.title}
                                         </div>
                                       </div>
@@ -383,7 +385,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           ))}
 
           {!isOpen && (
-            <p className="p-2 capitalize text-[12px] font-normal  text-gray-light">
+            <p className="p-2 capitalize text-[10px] font-normal  text-gray-light">
               charts & maps
             </p>
           )}
@@ -393,14 +395,14 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 {({ open }) => (
                   <>
                     <AccordionHeader
-                      className={`w-full py-3 px-2 hover:shadow-my hover:border-l-4 hover:-border-l-blue  rounded-md   text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
+                      className={`w-full py-2 px-2 hover:shadow-my hover:border-l-4 hover:-border-l-blue  rounded-md   text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
                         open ? "border-l-4 border-l-blue text-blue" : ""
                       }`}
                     >
                       <div className="flex items-center gap-2">
-                        <div className="text-[20px] ml-2">{menu.icon}</div>
+                        <div className="text-[12px] ml-2">{menu.icon}</div>
                         {!isOpen && (
-                          <div className="capitalize text-[15px]">
+                          <div className="capitalize text-[12px]">
                             {menu.title}
                           </div>
                         )}
@@ -446,7 +448,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                                         <div className="text-[12px] ml-2">
                                           <FiCircle />
                                         </div>
-                                        <div className="capitalize text-[15px]">
+                                        <div className="capitalize text-[12px]">
                                           {submenuItem.title}
                                         </div>
                                       </div>
@@ -465,7 +467,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           ))}
 
           {!isOpen && (
-            <p className="p-2 capitalize text-[12px] font-normal  text-gray-light">
+            <p className="p-2 capitalize text-[10px] font-normal  text-gray-light">
               others
             </p>
           )}
@@ -475,14 +477,14 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 {({ open }) => (
                   <>
                     <AccordionHeader
-                      className={`w-full py-3 px-2 hover:shadow-my hover:border-l-4 hover:-border-l-blue  rounded-md   text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
+                      className={`w-full py-2 px-2 hover:shadow-my hover:border-l-4 hover:-border-l-blue  rounded-md   text-grey hover:text-blue flex items-center justify-between  cursor-pointer ${
                         open ? "border-l-4 border-l-blue text-blue" : ""
                       }`}
                     >
                       <div className="flex items-center gap-2">
-                        <div className="text-[20px] ml-2">{menu.icon}</div>
+                        <div className="text-[12px] ml-2">{menu.icon}</div>
                         {!isOpen && (
-                          <div className="capitalize text-[15px]">
+                          <div className="capitalize text-[12px]">
                             {menu.title}
                           </div>
                         )}
